@@ -116,6 +116,9 @@ function loop() {
       
       // collision. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        if(snake.maxCells>19){
+          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
+        }
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
