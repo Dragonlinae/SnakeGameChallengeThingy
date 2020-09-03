@@ -53,6 +53,12 @@ function loop() {
   snake.y += snake.dy;
   // wrap snake position on edge of screen
   if (snake.x < 0) {
+        if(snake.maxCells>19){
+          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
+        }
+        else{
+          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
+        }
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -63,6 +69,12 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
   }
   else if (snake.x >= canvas.width) {
+        if(snake.maxCells>19){
+          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
+        }
+        else{
+          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
+        }
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -73,6 +85,12 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
   }
   if (snake.y < 0) {
+        if(snake.maxCells>19){
+          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
+        }
+        else{
+          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
+        }
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -83,6 +101,12 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
   }
   else if (snake.y >= canvas.height) {
+        if(snake.maxCells>19){
+          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
+        }
+        else{
+          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
+        }
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
