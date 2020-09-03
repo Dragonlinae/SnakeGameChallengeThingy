@@ -40,6 +40,31 @@ var apple = {
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+  
+function endMessage() {
+  if(snake.maxCells>19){
+    alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
+  }
+  else{
+    var ri = getRandomInt(0,5)
+    if(ri == 0){
+      alert("\"HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.HAPPY.\" Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
+    }
+    if(ri == 1){
+      alert("\"Light travels faster than sound. This is why some people appear bright until you hear them speak.\" I wonder who this is directed at 🤔. Whoops, theres only " + (parseInt(snake.maxCells) - 4) + " apples. Better luck next time!");
+    }
+    if(ri == 2){
+      alert("\"College is about three things: homework, fun, and sleep...but you can only choose two.\" Is it that hard? You only got " + (parseInt(snake.maxCells) - 4) + " apples. D:");
+    }
+    if(ri == 3){
+      alert("\"\"Never livestream while destroying your enemies,\" -Sun Tzu, The Art of War - Technoblade\" You got " + (parseInt(snake.maxCells) - 4) + " apples! and need " +(20 - parseInt(snake.maxCells)) + "more apples! Almost there!");
+    }
+    if(ri == 4){
+      alert("We are officially screwed every which way from Sunday with whipped cream and a Sans-shaped cherry on top, aren't we? Oh, you got " + (parseInt(snake.maxCells) - 4) + " apples if you were wondering.");
+    }
+  }
+}
+  
 // game loop
 function loop() {
   requestAnimationFrame(loop);
@@ -53,12 +78,7 @@ function loop() {
   snake.y += snake.dy;
   // wrap snake position on edge of screen
   if (snake.x < 0) {
-        if(snake.maxCells>19){
-          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
-        }
-        else{
-          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
-        }
+        endMessage();
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -69,12 +89,7 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
   }
   else if (snake.x >= canvas.width) {
-        if(snake.maxCells>19){
-          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
-        }
-        else{
-          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
-        }
+        endMessage();
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -85,12 +100,7 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
   }
   if (snake.y < 0) {
-        if(snake.maxCells>19){
-          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
-        }
-        else{
-          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
-        }
+        endMessage();
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -101,12 +111,7 @@ function loop() {
         apple.y = getRandomInt(0, 25) * grid;
   }
   else if (snake.y >= canvas.height) {
-        if(snake.maxCells>19){
-          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
-        }
-        else{
-          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
-        }
+        endMessage();
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
@@ -140,12 +145,7 @@ function loop() {
       
       // collision. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        if(snake.maxCells>19){
-          alert("Whew! Enough playing for now! Maybe I should go read some Rebel's Cascade. Maybe there is something there?");
-        }
-        else{
-          alert("Heh. Only " + (parseInt(snake.maxCells) - 4) + " apples? Better try again!");
-        }
+        endMessage();
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
